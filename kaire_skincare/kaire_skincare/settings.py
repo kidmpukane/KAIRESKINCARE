@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user-profiles',
-    'recommendations',
+    'user_profiles',
+    # 'recommendations',
     'rest_framework',
     "corsheaders",
 ]
