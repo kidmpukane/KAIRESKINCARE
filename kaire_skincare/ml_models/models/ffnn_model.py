@@ -2,37 +2,32 @@ import numpy as np
 import pandas as pd
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
 
-# Read data
-rec_ing_path = "../data/recommended_ingredients.csv"
-skin_test_path = "../data/skin_type_test.csv"
-prod_path = "../data/skincare_products.csv"
+# Define the data
+normal_skin = [0, -1, 0, 1, 0]
+oily_skin = [1, 1, 1, 0, 1]
+dry_skin = [-1, -1, -1, -1, -1]
+combination_skin = [0.5, 0, 0.5, 0, 0]
+sensitive_skin = [-0.5, 0, -0.5, 1, 1]
 
-prod_df = pd.read_csv(prod_path)
-rec_ing_df = pd.read_csv(rec_ing_path)
-skin_test_df = pd.read_csv(skin_test_path)
+# Convert the data to a NumPy array
+X = np.array([normal_skin, oily_skin, dry_skin,
+             combination_skin, sensitive_skin])
 
-# Preprocess skin test data
-X = skin_test_df.drop(columns='Question').values  # Features
-y = np.eye(len(skin_test_df.columns) -
-           1)[np.argmax(skin_test_df.iloc[:, 1:].values, axis=1)]  # One-hot encoded labels
+# Convert the labels to one-hot encoded format
+y = to_categorical([0, 1, 2, 3, 4])
 
-X_train, X_val, y_train, y_val = train_test_split(
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
-# Define the FFNN model
+# Define the model
 model = Sequential([
-    Dense(10, input_shape=(X.shape[1],), activation='relu'),  # Input layer
-    Dense(24, activation='relu'),  # Hidden layer 1
-    Dense(16, activation='relu'),  # Hidden layer 2
-    Dense(12, activation='relu'),  # Hidden layer 3
-    Dense(8, activation='relu'),  # Hidden layer 3
-    Dense(4, activation='relu'),  # Hidden layer 3
-    Dense(y.shape[1], activation='softmax')  # Output layer
+    Dense(160, input_shape=(X.shape[1],), activation='relu'),  # Input layer
+    Dense(5, activation='softmax'),  # Output layer
 ])
-
 
 # Compile the model
 model.compile(optimizer='adam', loss='categorical_crossentropy',
@@ -40,29 +35,29 @@ model.compile(optimizer='adam', loss='categorical_crossentropy',
 
 # Train the model
 history = model.fit(X_train, y_train, epochs=320,
-                    batch_size=32, validation_data=(X_val, y_val))
-# Plot learning curves
-plt.plot(history.history['loss'], label='train')
-plt.plot(history.history['val_loss'], label='val')
-plt.title('Model Loss')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-plt.show()
+                    batch_size=5, validation_data=(X_test, y_test))
 
-plt.plot(history.history['accuracy'], label='train')
-plt.plot(history.history['val_accuracy'], label='val')
-plt.title('Model Accuracy')
-plt.xlabel('Epochs')
-plt.ylabel('Accuracy')
-plt.legend()
-plt.show()
+# Define a function to predict the skin type
 
-# Predict skin type based on new quiz answers
-new_quiz_answers = np.array([[0, 1, -1, 0.5, -0.5]])  # Example quiz answers
-predicted_skin_type = model.predict(new_quiz_answers)
-predicted_skin_type_index = np.argmax(predicted_skin_type)
-# evaluate the keras model
-# Evaluate the model on the test set (validation data)
-loss, accuracy = model.evaluate(X_val, y_val, verbose=0)
-print(f'Accuracy: {accuracy*100:.2f}%')
+
+def predict_skin_type(model, quiz_answers):
+    predicted_skin_type = model.predict(quiz_answers)
+    predicted_skin_type_index = np.argmax(predicted_skin_type)
+    return predicted_skin_type_index
+
+
+# Test the model
+normal_skin = np.array([normal_skin])
+print(predict_skin_type(model, normal_skin))
+
+oily_skin = np.array([oily_skin])
+print(predict_skin_type(model, oily_skin))
+
+dry_skin = np.array([dry_skin])
+print(predict_skin_type(model, dry_skin))
+
+combination_skin = np.array([combination_skin])
+print(predict_skin_type(model, combination_skin))
+
+sensitive_skin = np.array([sensitive_skin])
+print(predict_skin_type(model, sensitive_skin))
