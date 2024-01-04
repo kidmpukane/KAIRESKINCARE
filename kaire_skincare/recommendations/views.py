@@ -37,7 +37,6 @@ def get_customer_profile(request, id):
 
 
 class predict_skin(APIView):
-    @api_view(['POST'])
     def post(self, request):
         serializer = PredictRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
