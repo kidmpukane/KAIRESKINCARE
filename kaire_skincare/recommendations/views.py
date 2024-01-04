@@ -41,5 +41,5 @@ class predict_skin(APIView):
         serializer = PredictRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         quiz_answers = serializer.validated_data['quiz_answers']
-        predicted_skin_type = predict_skin_type(model, quiz_answers)
+        predicted_skin_type = predict_skin_type(quiz_answers)
         return Response({'predicted_skin_type': predicted_skin_type})
