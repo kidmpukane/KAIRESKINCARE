@@ -37,11 +37,16 @@ def predict_skin_type(quiz_answers):
                   metrics=['accuracy'])
 
     # Train the model
-    history = model.fit(X_train, y_train, epochs=320,
+    history = model.fit(X_train, y_train, epochs=100,
                         batch_size=5, validation_data=(X_test, y_test))
 
     # Predict the skin type
     predicted_skin_type = model.predict(np.expand_dims(quiz_answers, axis=0))
     predicted_skin_type_index = np.argmax(predicted_skin_type)
 
-    return predicted_skin_type_index
+    # Map indices to skin type names
+    skin_type_names = ['Normal Skin', 'Oily Skin',
+                       'Dry Skin', 'Combination Skin', 'Sensitive Skin']
+
+    # Return the predicted skin type name
+    return skin_type_names[predicted_skin_type_index]

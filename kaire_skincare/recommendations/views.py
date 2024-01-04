@@ -43,3 +43,20 @@ class predict_skin(APIView):
         quiz_answers = serializer.validated_data['quiz_answers']
         predicted_skin_type = predict_skin_type(quiz_answers)
         return Response({'predicted_skin_type': predicted_skin_type})
+
+# class PredictSkin(APIView):
+#   def post(self, request):
+#       serializer = PredictRequestSerializer(data=request.data)
+#       serializer.is_valid(raise_exception=True)
+#       quiz_answers = serializer.validated_data['quiz_answers']
+#       predicted_skin_type = predict_skin_type(quiz_answers)
+
+#       # Get all products
+#       products = Products.objects.all()
+
+#       # Filter products by the predicted skin type
+#       filtered_products = products.filter(skin_type=predicted_skin_type)
+
+#       # Return the filtered products
+#       product_serializer = ProductSerializer(filtered_products, many=True)
+#       return Response(product_serializer.data)
