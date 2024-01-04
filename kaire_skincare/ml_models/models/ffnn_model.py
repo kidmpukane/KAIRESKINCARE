@@ -46,18 +46,18 @@ def predict_skin_type(model, quiz_answers):
     return predicted_skin_type_index
 
 
-# Test the model
-normal_skin = np.array([normal_skin])
-print(predict_skin_type(model, normal_skin))
+# # Test the model
+# normal_skin = np.array([normal_skin])
+# print(predict_skin_type(model, normal_skin))
 
-oily_skin = np.array([oily_skin])
-print(predict_skin_type(model, oily_skin))
+# oily_skin = np.array([oily_skin])
+# print(predict_skin_type(model, oily_skin))
 
-dry_skin = np.array([dry_skin])
-print(predict_skin_type(model, dry_skin))
+# dry_skin = np.array([dry_skin])
+# print(predict_skin_type(model, dry_skin))
 
-combination_skin = np.array([combination_skin])
-print(predict_skin_type(model, combination_skin))
+# combination_skin = np.array([combination_skin])
+# print(predict_skin_type(model, combination_skin))
 
-sensitive_skin = np.array([sensitive_skin])
-print(predict_skin_type(model, sensitive_skin))
+# sensitive_skin = np.array([sensitive_skin])
+# print(predict_skin_type(model, sensitive_skin))

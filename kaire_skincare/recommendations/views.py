@@ -1,12 +1,11 @@
-from django.shortcuts import render
-from rest_framework.decorators import api_view
-from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from .models import Products
-from .serializers import ProductSerializer
-
-
+from .serializers import ProductSerializer, PredictRequestSerializer
+from ml_models.models.ffnn_model import predict_skin_type
 # .......................................GET ALL PRODUCT DATA.......................................
+
 
 def get_all_data(queryset, serializer_class):
     data = queryset.objects.all()
@@ -35,3 +34,13 @@ def get_product(request, id, profile_model, serializer_class):
 @api_view(['GET'])
 def get_customer_profile(request, id):
     return get_product(request, id, Products, ProductSerializer)
+
+
+class predict_skin(APIView):
+    @api_view(['POST'])
+    def post(self, request):
+        serializer = PredictRequestSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        quiz_answers = serializer.validated_data['quiz_answers']
+        predicted_skin_type = predict_skin_type(model, quiz_answers)
+        return Response({'predicted_skin_type': predicted_skin_type})
