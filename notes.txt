@@ -1,9 +1,0 @@
-if predict algo returns 0: 
-    return filter products by algo:
-
-names = ["John", "James", "Marry", "Paul", "Judas", "Mathew", "David", "Samson"]
-add_names = ["Marry", "Judas", "Samson"]
-
-for name in names:
-   if name in add_names:
-       print(name)
