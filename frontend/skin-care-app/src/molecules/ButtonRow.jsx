@@ -1,15 +1,40 @@
 import React from "react";
+import "./molecularStyles.css";
 import { SquareButton } from "../atoms/CustomButtons";
 
 function ButtonRow(props) {
   return (
-    <div>
-      <SquareButton buttonText="0" buttonStyle={props.buttonStyle} />
-      <SquareButton buttonText="1" buttonStyle={props.buttonStyle} />
-      <SquareButton buttonText="2" buttonStyle={props.buttonStyle} />
-      <SquareButton buttonText="3" buttonStyle={props.buttonStyle} />
-      <SquareButton buttonText="4" buttonStyle={props.buttonStyle} />
-      <SquareButton buttonText="5" buttonStyle={props.buttonStyle} />
+    <div className="button-row-container">
+      <SquareButton
+        squareButtonText="0"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
+      <SquareButton
+        squareButtonText="1"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
+      <SquareButton
+        squareButtonText="2"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
+      <SquareButton
+        squareButtonText="3"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
+      <SquareButton
+        squareButtonText="4"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
+      <SquareButton
+        squareButtonText="5"
+        squareButtonStyles={props.squareButtonStyles}
+        onPress={props.onPress}
+      />
     </div>
   );
 }

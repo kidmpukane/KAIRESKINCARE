@@ -3,16 +3,24 @@ import "./atomicStyles.css";
 
 const RoundButton = (props) => {
   return (
-    <button className="round-button" style={props.RoundButtonStyles}>
-      {props.buttonText}
+    <button
+      className="round-button"
+      style={props.roundButtonStyles}
+      onPress={props.onPress}
+    >
+      {props.roundButtonText}
     </button>
   );
 };
 
 const SquareButton = (props) => {
   return (
-    <button className="square-button" style={props.SquareButtonStyles}>
-      {props.buttonText}
+    <button
+      className="square-button"
+      style={props.squareButtonStyles}
+      onPress={props.onPress}
+    >
+      {props.squareButtonText}
     </button>
   );
 };

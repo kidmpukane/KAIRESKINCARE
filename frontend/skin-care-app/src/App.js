@@ -1,9 +1,9 @@
 import React from "react";
-import ButtonRow from "./molecules/ButtonRow";
+import ProgressBar from "./molecules/ProgressBar";
 function App() {
   return (
     <div>
-      <ButtonRow />
+      <ProgressBar />
     </div>
   );
 }

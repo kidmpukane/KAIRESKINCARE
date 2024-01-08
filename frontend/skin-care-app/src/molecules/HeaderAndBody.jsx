@@ -4,8 +4,14 @@ import { HeadingsCustom, BodyTextCustom } from "../atoms/CustomTexts";
 const HeaderAndBody = (props) => {
   return (
     <div>
-      <HeadingsCustom HeadingTexts=" HEADING WEST..." />
-      <BodyTextCustom BodyTexts="This is a body text" />
+      <HeadingsCustom
+        headingTexts=" HEADING WEST..."
+        headingTextStyles={props.headingTextStyles}
+      />
+      <BodyTextCustom
+        bodyTexts="This is a body text"
+        bodyTextStyles={props.bodyTextStyles}
+      />
     </div>
   );
 };
