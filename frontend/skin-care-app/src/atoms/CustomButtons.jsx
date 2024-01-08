@@ -1,7 +1,12 @@
 import React from "react";
+import "./atomicStyles.css";
 
-function CustomButtons() {
-  return <div>buttons</div>;
-}
+const RoundButton = () => {
+  return <button className="round-button">Click Me</button>;
+};
 
-export default CustomButtons;
+const SquareButton = () => {
+  return <button className="square-button">Click Me</button>;
+};
+
+export { SquareButton, RoundButton };

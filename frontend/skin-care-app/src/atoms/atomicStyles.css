@@ -8,3 +8,22 @@
     font-family: 'Odibee Sans', sans-serif;
 }
 
+.round-button {
+    font-size: 5vw;
+    height: 15vw;
+    width: 100%;
+    border-radius: 10vw;
+    border: 2rem;
+    background: #D1D1D1;
+    cursor: pointer;
+    color: black;
+}
+
+.square-button {
+        width: 14vw;
+        height: 18vw;
+        border-radius: 1.5vw;
+        border: 2rem;
+        cursor: pointer;
+        color: black;
+}

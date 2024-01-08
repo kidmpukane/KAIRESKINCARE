@@ -1,13 +1,13 @@
 import React from "react";
-// import CustomButtons from "./atoms/buttons";
+import { RoundButton, SquareButton } from "./atoms/CustomButtons";
 // import CustomImages from "./atoms/images";
-import { BodyTextCustom, HeadingsCustom } from "./atoms/CustomTexts";
+// import { BodyTextCustom, HeadingsCustom } from "./atoms/CustomTexts";
 
 function App() {
   return (
     <div>
-      <HeadingsCustom />
-      <BodyTextCustom />
+      <RoundButton />
+      <SquareButton />
     </div>
   );
 }
