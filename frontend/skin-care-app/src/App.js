@@ -1,9 +1,9 @@
 import React from "react";
-import MolecularProgressBar from "./molecules/MolecularProgressBar";
+import FormOrganism from "./organisms/FormOrganism";
 function App() {
   return (
     <div>
-      <MolecularProgressBar />
+      <FormOrganism />
     </div>
   );
 }

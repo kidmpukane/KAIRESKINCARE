@@ -7,7 +7,7 @@ const MolecularProgressBar = () => {
   return (
     <div className="progress-bar-container">
       <ProgressBar />
-      <HeadingsCustom className="headings" headingTexts="96%" />
+      <HeadingsCustom className="progress-bar-headings" headingTexts="96%" />
     </div>
   );
 };

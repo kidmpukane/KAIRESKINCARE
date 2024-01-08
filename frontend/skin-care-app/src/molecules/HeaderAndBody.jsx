@@ -5,11 +5,11 @@ const HeaderAndBody = (props) => {
   return (
     <div>
       <HeadingsCustom
-        headingTexts=" HEADING WEST..."
+        headingTexts={props.headingTexts}
         headingTextStyles={props.headingTextStyles}
       />
       <BodyTextCustom
-        bodyTexts="This is a body text"
+        bodyTexts={props.bodyTexts}
         bodyTextStyles={props.bodyTextStyles}
       />
     </div>
