@@ -1,9 +1,9 @@
 import React from "react";
-import ProgressBar from "./molecules/ProgressBar";
+import MolecularProgressBar from "./molecules/MolecularProgressBar";
 function App() {
   return (
     <div>
-      <ProgressBar />
+      <MolecularProgressBar />
     </div>
   );
 }

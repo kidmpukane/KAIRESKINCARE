@@ -1,5 +1,5 @@
 import React from "react";
-import "./molecularStyles.css"; // Assuming you have a CSS file named ProgressBar.css
+import "./atomicStyles.css";
 
 const ProgressBar = ({ progress }) => {
   const progressPercentage = progress + "%";

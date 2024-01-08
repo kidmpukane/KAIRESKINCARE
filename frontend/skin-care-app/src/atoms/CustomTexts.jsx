@@ -5,7 +5,7 @@ const BodyTextCustom = (props) => {
   return (
     <>
       <span className="bodies" style={props.bodyTextStyles}>
-        {props.BodyTexts}
+        {props.bodyTexts}
       </span>
     </>
   );
@@ -15,7 +15,7 @@ const HeadingsCustom = (props) => {
   return (
     <>
       <h1 className="headings" style={props.headingTextStyles}>
-        {props.HeadingTexts}
+        {props.headingTexts}
       </h1>
     </>
   );

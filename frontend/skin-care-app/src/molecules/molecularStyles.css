@@ -11,16 +11,22 @@
     /* Firefox */
 }
 
-.progress-bar {
+.progress-bar-container {
     width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 10rem;
-    border: 0.2rem solid #000;
-    background: #EBE5DC;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
-.progress-bar__fill {
-    height: 1.5rem;
-    background-color: #000;
-    border-radius: 10rem;
+.headings {
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 5rem;
 }
