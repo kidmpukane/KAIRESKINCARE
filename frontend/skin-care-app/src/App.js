@@ -1,13 +1,9 @@
 import React from "react";
-import { RoundButton, SquareButton } from "./atoms/CustomButtons";
-// import CustomImages from "./atoms/images";
-// import { BodyTextCustom, HeadingsCustom } from "./atoms/CustomTexts";
-
+import ButtonRow from "./molecules/ButtonRow";
 function App() {
   return (
     <div>
-      <RoundButton />
-      <SquareButton />
+      <ButtonRow />
     </div>
   );
 }

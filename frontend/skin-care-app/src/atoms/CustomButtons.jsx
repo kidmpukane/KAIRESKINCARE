@@ -1,12 +1,20 @@
 import React from "react";
 import "./atomicStyles.css";
 
-const RoundButton = () => {
-  return <button className="round-button">Click Me</button>;
+const RoundButton = (props) => {
+  return (
+    <button className="round-button" style={props.RoundButtonStyles}>
+      {props.buttonText}
+    </button>
+  );
 };
 
-const SquareButton = () => {
-  return <button className="square-button">Click Me</button>;
+const SquareButton = (props) => {
+  return (
+    <button className="square-button" style={props.SquareButtonStyles}>
+      {props.buttonText}
+    </button>
+  );
 };
 
 export { SquareButton, RoundButton };

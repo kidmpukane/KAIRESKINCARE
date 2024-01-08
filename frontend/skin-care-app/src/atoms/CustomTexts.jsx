@@ -1,7 +1,7 @@
 import React from "react";
 import "./atomicStyles.css";
 
-const BodyTextCustom = ({ props }) => {
+const BodyTextCustom = (props) => {
   return (
     <>
       <span className="bodies" style={props.BodyStyles}>
@@ -11,7 +11,7 @@ const BodyTextCustom = ({ props }) => {
   );
 };
 
-const HeadingsCustom = ({ props }) => {
+const HeadingsCustom = (props) => {
   return (
     <>
       <h1 style={props.HeadingStyles} className="headings">
