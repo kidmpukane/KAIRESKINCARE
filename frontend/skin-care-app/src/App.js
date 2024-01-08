@@ -1,9 +1,9 @@
 import React from "react";
-import FormOrganism from "./organisms/FormOrganism";
+import Recommendations from "./organisms/Recommendations";
 function App() {
   return (
     <div>
-      <FormOrganism />
+      <Recommendations />
     </div>
   );
 }

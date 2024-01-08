@@ -1,3 +1,7 @@
 .form-button-container{
-    padding-top: 2rem;
+    padding-top: 1.6vw;
+}
+
+.recommendations-container{
+    display: flex;
 }

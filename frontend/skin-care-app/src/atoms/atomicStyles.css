@@ -1,10 +1,9 @@
 .bodies {
     font-family: 'Anonymous Pro', monospace;
-    font-weight: 400;
+    font-weight: 0.4vw;
 }
 
 .headings {
-
     font-family: 'Odibee Sans', sans-serif;
 }
 
@@ -13,7 +12,7 @@
     height: 15vw;
     width: 100%;
     border-radius: 10vw;
-    border: 2rem;
+    border: 2vw;
     background: #D1D1D1;
     cursor: pointer;
     color: black;
@@ -21,26 +20,34 @@
 
 .square-button {
     font-family: 'Anonymous Pro', monospace;
-    font-weight: 700;
-    font-size: 1.5rem;
-    width: 3rem;
-    height: 3rem;
+    font-weight: 7vw;
+    font-size: 1.5vw;
+    width: 3vw;
+    height: 3vw;
     flex-shrink: 0;
-    border-radius: 0.5rem;
-    border: 0.2rem solid #000;
+    border-radius: 0.5vw;
+    border: 0.2vw solid #000;
     background: #EBE5DC;
 }
+
 .progress-bar {
     width: 100%;
     height: 100%;
     background-color: #f3f3f3;
-    border-radius: 10rem;
-    border: 0.2rem solid #000;
+    border-radius: 10vw;
+    border: 0.2vw solid #000;
     background: #EBE5DC;
 }
 
 .progress-bar__fill {
-    height: 1.5rem;
+    height: 1.5vw;
     background-color: #000;
-    border-radius: 10rem;
+    border-radius: 10vw;
+}
+
+.square-image {
+    height: 100%;
+    width: 40vw;
+    padding-top: 0.1vw;
+    padding-right: 5vw;
 }
