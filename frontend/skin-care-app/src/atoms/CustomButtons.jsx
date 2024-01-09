@@ -15,11 +15,7 @@ const RoundButton = (props) => {
 
 const SquareButton = (props) => {
   return (
-    <button
-      className="square-button"
-      style={props.squareButtonStyles}
-      onPress={props.onPress}
-    >
+    <button className="square-button" onPress={props.onPress}>
       {props.squareButtonText}
     </button>
   );

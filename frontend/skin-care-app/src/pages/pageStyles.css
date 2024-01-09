@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+    .customisation-page-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2vw;
+        overflow: hidden;
+    }
+
+}

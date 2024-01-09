@@ -31,3 +31,21 @@
     height: 100%;
     width: 1vw;
 }
+@media (min-width: 768px) {
+.button-row-container {
+        padding-top: 2vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        overflow-y: hidden;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+.molecular-header{
+    
+}
+
+}

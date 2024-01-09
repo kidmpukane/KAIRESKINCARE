@@ -31,14 +31,6 @@
     background: #EBE5DC;
 }
 .square-button:hover {
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: 700;
-    font-size: 5vw;
-    width: 9vw;
-    height: 11vw;
-    flex-shrink: 0;
-    border-radius: 1vw;
-    border: 0.5vw solid #000;
     color: #EBE5DC;
     background-color: #868365;
     cursor: pointer;
@@ -64,4 +56,38 @@
     width: 40vw;
     padding-top: 0.1vw;
     padding-right: 5vw;
+}
+
+@media (min-width: 768px) {
+    .bodies {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 0.9vw;
+        font-weight: 400;
+    }
+
+    .headings {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 4vw;
+        font-weight: 700;
+    }
+
+    .square-button {
+        font-family: 'Anonymous Pro', monospace;
+        font-weight: 700;
+        font-size: 1.5vw;
+        width: 4vw;
+        height: 4.5vw;
+        flex-shrink: 0;
+        border-radius: 1vw;
+        border: 0.2vw solid #000;
+        background: #EBE5DC;
+    }
+
+.square-image {
+    height: 100%;
+    width: 10vw;
+    padding-top: 0.1vw;
+    padding-right: 1vw;
+}
+
 }

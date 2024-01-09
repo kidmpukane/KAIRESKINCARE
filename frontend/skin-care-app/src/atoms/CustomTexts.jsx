@@ -4,9 +4,7 @@ import "./atomicStyles.css";
 const BodyTextCustom = (props) => {
   return (
     <>
-      <span className="bodies" style={props.bodyTextStyles}>
-        {props.bodyTexts}
-      </span>
+      <span className="bodies">{props.bodyTexts}</span>
     </>
   );
 };
@@ -14,9 +12,7 @@ const BodyTextCustom = (props) => {
 const HeadingsCustom = (props) => {
   return (
     <>
-      <h1 className="headings" style={props.headingTextStyles}>
-        {props.headingTexts}
-      </h1>
+      <h1 className="headings">{props.headingTexts}</h1>
     </>
   );
 };

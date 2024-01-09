@@ -6,11 +6,12 @@ import ButtonRow from "../molecules/ButtonRow";
 function FormOrganism(props) {
   return (
     <div className="form-organism-container">
-      <HeaderAndBody
-        headingTexts="Acne"
-        headingTextStyles={{ fontSize: "4rem" }}
-        bodyTexts="Are you an expert, would you just like to see what it is that we have to offer?"
-      />
+      <div className="molecular-header">
+        <HeaderAndBody
+          headingTexts="Acne"
+          bodyTexts="Are you an expert, would you just like to see what it is that we have to offer?"
+        />
+      </div>
       <div className="form-button-container">
         <ButtonRow onPress={props.onPress} />
       </div>
