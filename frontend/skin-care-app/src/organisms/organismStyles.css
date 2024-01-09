@@ -1,7 +1,11 @@
-.form-button-container{
-    padding-top: 1.6vw;
+.recommendations-container {
+    display: flex;
+    padding: 2vw;
+    border: 0.6vw solid #000;
+    border-radius: 1vw;    
 }
 
-.recommendations-container{
-    display: flex;
+
+.form-button-container{
+    padding-top: 1.6vw;
 }

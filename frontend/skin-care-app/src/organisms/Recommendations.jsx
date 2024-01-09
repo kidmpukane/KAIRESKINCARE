@@ -21,8 +21,8 @@ function Recommendations() {
           headingTexts="Recommended Products"
           bodyTexts="This is the product that we have recommended for you, depending on the information that we received."
         />
-        <HeadingsCustom headingTexts="Typical Product Name" />
-        <MolecularProgressBar />
+        {/* <HeadingsCustom headingTexts="Typical Product Name" />
+        <MolecularProgressBar /> */}
       </div>
     </div>
   );
