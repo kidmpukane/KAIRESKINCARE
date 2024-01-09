@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Forms from "./components/Forms";
+import CustomisationPage from "./pages/CustomisationPage";
 
 function App() {
   return (
     <div>
-      <Forms />
+      <CustomisationPage />
     </div>
   );
 }
