@@ -4,21 +4,17 @@ import CustomImages from "../atoms/CustomImages";
 import { HeaderAndBody } from "../molecules/HeaderAndBody";
 import { HeadingsCustom } from "../atoms/CustomTexts";
 import MolecularProgressBar from "../molecules/MolecularProgressBar";
+import productImage from "../assets/Rectangle 112.png";
 
-function Recommendations() {
+function RecommendationCard() {
   return (
-    <div className="recommendations-container">
+    <div className="recommendations-card-container">
       <div className="left-div">
-        <CustomImages
-          src={
-            "https://plus.unsplash.com/premium_photo-1702273505247-93668f78c301?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
-          alt="Nothing To Display"
-        />
+        <CustomImages src={productImage} alt="Nothing To Display" />
       </div>
       <div className="right-div">
         <HeaderAndBody
-          headingTexts="Recommended Products"
+          headingTexts="RECOMMENDED PRODUCTS"
           bodyTexts="This is the product that we have recommended for you, depending on the information that we received."
         />
         {/* <HeadingsCustom headingTexts="Typical Product Name" />
@@ -28,4 +24,4 @@ function Recommendations() {
   );
 }
 
-export default Recommendations;
+export default RecommendationCard;

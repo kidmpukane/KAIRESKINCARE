@@ -1,11 +1,8 @@
 import React from "react";
-import Recommendations from "./organisms/Recommendations";
+import "./App.css";
+
 function App() {
-  return (
-    <div>
-      <Recommendations />
-    </div>
-  );
+  return <div>mendations</div>;
 }
 
 export default App;
