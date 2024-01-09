@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+import Forms from "./components/Forms";
 
 function App() {
-  return <div>mendations</div>;
+  return (
+    <div>
+      <Forms />
+    </div>
+  );
 }
 
 export default App;

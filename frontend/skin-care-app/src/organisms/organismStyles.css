@@ -9,3 +9,9 @@
 .form-button-container{
     padding-top: 1.6vw;
 }
+
+.form-organism-container{
+    padding: 10vw;
+    border: 0.3vw solid #000;
+    border-radius: 2vw;
+}

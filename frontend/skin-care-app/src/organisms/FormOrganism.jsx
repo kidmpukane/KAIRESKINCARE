@@ -5,7 +5,7 @@ import ButtonRow from "../molecules/ButtonRow";
 
 function FormOrganism(props) {
   return (
-    <div>
+    <div className="form-organism-container">
       <HeaderAndBody
         headingTexts="Acne"
         headingTextStyles={{ fontSize: "4rem" }}
