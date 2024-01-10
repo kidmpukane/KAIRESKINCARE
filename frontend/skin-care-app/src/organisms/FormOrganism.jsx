@@ -24,9 +24,6 @@ function FormOrganism(props) {
         <SquareButton onClick={() => handleClick(4)} squareButtonText="4" />
         <SquareButton onClick={() => handleClick(5)} squareButtonText="5" />
       </div>
-      <button onClick={() => console.log("Bitten Help Me Bitten!!!")}>
-        Bitten
-      </button>
     </div>
   );
 }

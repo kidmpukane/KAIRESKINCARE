@@ -3,11 +3,7 @@ import "./atomicStyles.css";
 
 const RoundButton = (props) => {
   return (
-    <button
-      className="round-button"
-      style={props.roundButtonStyles}
-      onPress={props.onPress}
-    >
+    <button type={props.type} className="round-button" onClick={props.onClick}>
       {props.roundButtonText}
     </button>
   );

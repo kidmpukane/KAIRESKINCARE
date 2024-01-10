@@ -1,2 +1,109 @@
-[]: Upload products
-[]: Start fronted
+import React from "react";
+import { Formik, Form, Field } from "formik";
+import axios from "axios";
+import { SquareButton } from "../atoms/CustomButtons";
+import "./organismStyles.css";
+import { CardHeaderAndBody } from "../molecules/HeaderAndBody";
+
+const FormOrganism = () => {
+  const handleSubmit = async (values) => {
+    try {
+      // Define the mapping object
+      const mapping = { 0: -1, 1: -0.5, 2: 0, 3: 0.5, 4: 0.75, 5: 1 };
+
+      // Convert the questionnaire values to a single array
+      const selectedNumbers = Object.values(values).flat();
+
+      // Map the selected numbers to the new values
+      const mappedNumbers = selectedNumbers.map((number) => mapping[number]);
+
+      // Send the mapped numbers to the endpoint
+      await axios.post(
+        "http://127.0.0.1:8000/api/recommendations/predict/",
+        mappedNumbers
+      );
+      console.log("Data sent successfully:", mappedNumbers);
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+  };
+
+  return (
+    <Formik
+      initialValues={{
+        questionnaire1: [],
+        questionnaire2: [],
+        questionnaire3: [],
+        questionnaire4: [],
+        questionnaire5: [],
+        questionnaire6: [],
+        questionnaire7: [],
+        questionnaire8: [],
+      }}
+      onSubmit={(values) => handleSubmit(values)}
+    >
+      {({ values, setFieldValue }) => (
+        <Form>
+          <div className="form-organism-container">
+            {[
+              {
+                key: "questionnaire1",
+                heading: "Cleansing",
+                body: "How does your skin feel after cleansing?",
+              },
+              {
+                key: "questionnaire2",
+                heading: "BREAKOUTS",
+                body: "How often do you experience breakouts?",
+              },
+              {
+                key: "questionnaire3",
+                heading: "SKIN OVER TIME",
+                body: "How does your skin feel midday?",
+              },
+              {
+                key: "questionnaire4",
+                heading: "SENSITIVITY TO PRODUCTS",
+                body: "How does your skin react to new products?",
+              },
+              {
+                key: "questionnaire5",
+                heading: "SENSITIVITY TO WEATHER",
+                body: "How does your skin feel in harsh weather?",
+              },
+            ].map(({ key, heading, body }) => (
+              <div className="form-button-container" key={key}>
+                <div className="molecular-header">
+                  <CardHeaderAndBody
+                    cardHeadingTexts={heading}
+                    cardBodyTexts={body}
+                  />
+                </div>
+                {[0, 1, 2, 3, 4, 5].map((number) => (
+                  <SquareButton
+                    key={number}
+                    onClick={() => {
+                      const newValue = [...values[key]];
+                      const index = newValue.indexOf(number);
+                      if (index === -1) {
+                        newValue.push(number);
+                      } else {
+                        newValue.splice(index, 1);
+                      }
+                      setFieldValue(key, newValue);
+                    }}
+                    squareButtonText={number.toString()}
+                    isActive={values[key].includes(number)}
+                  />
+                ))}
+              </div>
+            ))}
+            <button type="submit">Submit</button>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  );
+};
+
+export default FormOrganism;

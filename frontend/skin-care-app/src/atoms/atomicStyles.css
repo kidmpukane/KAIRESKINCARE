@@ -20,14 +20,16 @@
 }
 
 .round-button {
-    font-size: 5vw;
-    height: 15vw;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    font-size: 4vw;
+    height: 9vw;
     width: 100%;
     border-radius: 10vw;
-    border: 2vw;
-    background: #D1D1D1;
+    border: 0.5vw solid #000;
+    background: #868365;
     cursor: pointer;
-    color: black;
+    color: #D9D9D9;
 }
 
 .square-button {
@@ -70,6 +72,18 @@
 }
 
 @media (min-width: 768px) {
+    .round-button {
+            font-family: 'Anonymous Pro', monospace;
+            font-weight: 700;
+            font-size: 1.3vw;
+            height: 3.2vw;
+            width: 100%;
+            border-radius: 10vw;
+            border: 0.2vw solid #000;
+            background: #868365;
+            cursor: pointer;
+            color: #D9D9D9;
+        }
     .bodies {
         font-family: 'Anonymous Pro', monospace;
         font-size: 0.9vw;
