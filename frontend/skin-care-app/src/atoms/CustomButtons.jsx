@@ -15,7 +15,7 @@ const RoundButton = (props) => {
 
 const SquareButton = (props) => {
   return (
-    <button className="square-button" onPress={props.onPress}>
+    <button className="square-button" onClick={props.onClick}>
       {props.squareButtonText}
     </button>
   );

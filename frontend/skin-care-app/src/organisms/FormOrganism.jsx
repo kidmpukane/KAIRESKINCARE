@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./organismStyles.css";
 import { CardHeaderAndBody } from "../molecules/HeaderAndBody";
-import ButtonRow from "../molecules/ButtonRow";
+import { SquareButton } from "../atoms/CustomButtons";
 
 function FormOrganism(props) {
+  const [selectedNumber, setSelectedNumber] = useState(null);
+  const handleClick = (number) => {
+    setSelectedNumber(number);
+  };
   return (
     <div className="form-organism-container">
       <div className="molecular-header">
@@ -13,8 +17,16 @@ function FormOrganism(props) {
         />
       </div>
       <div className="form-button-container">
-        <ButtonRow onPress={props.onPress} />
+        <SquareButton onClick={() => handleClick(0)} squareButtonText="0" />
+        <SquareButton onClick={() => handleClick(1)} squareButtonText="1" />
+        <SquareButton onClick={() => handleClick(2)} squareButtonText="2" />
+        <SquareButton onClick={() => handleClick(3)} squareButtonText="3" />
+        <SquareButton onClick={() => handleClick(4)} squareButtonText="4" />
+        <SquareButton onClick={() => handleClick(5)} squareButtonText="5" />
       </div>
+      <button onClick={() => console.log("Bitten Help Me Bitten!!!")}>
+        Bitten
+      </button>
     </div>
   );
 }
