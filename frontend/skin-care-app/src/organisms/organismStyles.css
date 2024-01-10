@@ -32,4 +32,12 @@
         border: 0.2vw solid #000;
         border-radius: 1vw;
 }
+.right-div{
+    
+}
+.testing{
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 2vw;
+    font-weight: 500;
+}
 }

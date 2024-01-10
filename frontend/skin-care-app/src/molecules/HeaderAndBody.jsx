@@ -16,4 +16,13 @@ const HeaderAndBody = (props) => {
   );
 };
 
-export { HeaderAndBody };
+const CardHeaderAndBody = (props) => {
+  return (
+    <div>
+      <HeadingsCustom cardHeadingTexts={props.cardHeadingTexts} />
+      <BodyTextCustom cardBodyTexts={props.cardBodyTexts} />
+    </div>
+  );
+};
+
+export { HeaderAndBody, CardHeaderAndBody };
