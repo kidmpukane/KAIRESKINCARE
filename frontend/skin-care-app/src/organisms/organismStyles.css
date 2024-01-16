@@ -10,9 +10,18 @@
     padding-top: 10vw;
 }
 
+.green-button{
+    color: #EBE5DC;
+    background-color: #868365;
+
+}
 
 .form-button-container{
-    padding-top: 1.6vw;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 8vw;
+    
 }
 
 .form-organism-container{
@@ -39,7 +48,9 @@
         border-radius: 1.5vw;
 }
     .form-button-container {
-        padding-top: 0.6vw;
+        padding-top: 1vw;
+        display: flex;
+    
 }
 
     .recommendations-card-container {

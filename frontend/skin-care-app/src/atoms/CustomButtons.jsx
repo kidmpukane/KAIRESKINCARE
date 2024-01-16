@@ -3,7 +3,13 @@ import "./atomicStyles.css";
 
 const RoundButton = (props) => {
   return (
-    <button type={props.type} className="round-button" onClick={props.onClick}>
+    <button
+      type={props.type}
+      className={
+        props.className ? `${props.className} round-button` : "round-button"
+      }
+      onClick={props.onClick}
+    >
       {props.roundButtonText}
     </button>
   );
@@ -11,7 +17,12 @@ const RoundButton = (props) => {
 
 const SquareButton = (props) => {
   return (
-    <button className="square-button" onClick={props.onClick}>
+    <button
+      className={
+        props.className ? `${props.className} square-button` : "square-button"
+      }
+      onClick={props.onClick}
+    >
       {props.squareButtonText}
     </button>
   );
