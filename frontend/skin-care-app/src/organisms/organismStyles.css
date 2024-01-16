@@ -11,6 +11,14 @@
 }
 
 .green-button{
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    font-size: 5vw;
+    width: 9vw;
+    height: 11vw;
+    flex-shrink: 0;
+    border-radius: 1vw;
+    border: 0.5vw solid #000;
     color: #EBE5DC;
     background-color: #868365;
 

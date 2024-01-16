@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./componentStyles.css";
 import FormOrganism from "../organisms/FormOrganism";
 import { HeaderAndBody } from "../molecules/HeaderAndBody";
 
 const Forms = () => {
-  const [myArray, setMyArray] = useState([null]);
+  const [toggleBtn, setToggleBtn] = useState();
+  const [myArray, setMyArray] = useState([0]);
   const [iniNum, setIniNum] = useState(0);
 
   const handleToggle = (number, index) => {
@@ -18,8 +19,12 @@ const Forms = () => {
 
     // Update iniNum
     setIniNum(number);
-    console.log(myArray);
   };
+
+  // Log myArray after each update
+  useEffect(() => {
+    console.log("quiz-answer:", myArray);
+  }, [myArray]);
 
   return (
     <div className="form-container">
@@ -32,8 +37,8 @@ const Forms = () => {
       </div>
       <div className="form-orgs">
         <FormOrganism
-          cardHeadingTexts="Acne"
-          cardBodyTexts="Are you an expert, would you just like to see what it is that we have to offer?"
+          cardHeadingTexts="CLEANSING"
+          cardBodyTexts="How does your skin feel after cleansing?"
           btnZero={() => handleToggle(0, 0)}
           btnOne={() => handleToggle(1, 0)}
           btnTwo={() => handleToggle(2, 0)}
@@ -42,6 +47,8 @@ const Forms = () => {
           btnFive={() => handleToggle(5, 0)}
         />
         <FormOrganism
+          cardHeadingTexts="BREAK-OUTS"
+          cardBodyTexts="How often do you experience breakouts?"
           btnZero={() => handleToggle(0, 1)}
           btnOne={() => handleToggle(1, 1)}
           btnTwo={() => handleToggle(2, 1)}
@@ -50,6 +57,8 @@ const Forms = () => {
           btnFive={() => handleToggle(5, 1)}
         />
         <FormOrganism
+          cardHeadingTexts="SKIN DURING THE DAY"
+          cardBodyTexts="How does your skin feel midday?"
           btnZero={() => handleToggle(0, 2)}
           btnOne={() => handleToggle(1, 2)}
           btnTwo={() => handleToggle(2, 2)}
@@ -58,6 +67,8 @@ const Forms = () => {
           btnFive={() => handleToggle(5, 2)}
         />
         <FormOrganism
+          cardHeadingTexts="NEW PRODUCTS"
+          cardBodyTexts="How does your skin react to new products?"
           btnZero={() => handleToggle(0, 3)}
           btnOne={() => handleToggle(1, 3)}
           btnTwo={() => handleToggle(2, 3)}
@@ -66,6 +77,8 @@ const Forms = () => {
           btnFive={() => handleToggle(5, 3)}
         />
         <FormOrganism
+          cardHeadingTexts="SKIN IN HARSH WEATHER"
+          cardBodyTexts="How does your skin feel in harsh weather?"
           btnZero={() => handleToggle(0, 4)}
           btnOne={() => handleToggle(1, 4)}
           btnTwo={() => handleToggle(2, 4)}
