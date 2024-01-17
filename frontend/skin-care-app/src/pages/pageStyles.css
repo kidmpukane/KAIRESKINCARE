@@ -2,8 +2,13 @@
     .customisation-page-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 2vw;
+        grid-gap: none;
         overflow: hidden;
+        padding: 1.5vw;
+    }
+
+    .customisation-form {
+        width: 1vw;
     }
 
 }

@@ -17,11 +17,11 @@ function RecommendationCard() {
           cardHeadingTexts="RECOMMENDED PRODUCTS"
           cardBodyTexts="This is the product that we have recommended for you, depending on the information that we received."
         />
-        <HeadingsCustom
-          className={"testing"}
+        {/* <HeadingsCustom
+          className={"mobile-text"}
           headingTexts="Typical Product Name"
         />
-        {/* <MolecularProgressBar /> */}
+        <MolecularProgressBar /> */}
       </div>
     </div>
   );
