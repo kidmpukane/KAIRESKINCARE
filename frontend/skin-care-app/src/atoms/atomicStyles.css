@@ -49,6 +49,20 @@
     cursor: pointer;
 }
 
+.green-button {
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    font-size: 5vw;
+    width: 9vw;
+    height: 11vw;
+    flex-shrink: 0;
+    border-radius: 1vw;
+    border: 0.5vw solid #000;
+    color: #EBE5DC;
+    background-color: #868365;
+
+}
+
 .progress-bar {
     width: 100%;
     height: 100%;
@@ -70,6 +84,8 @@
     padding-top: 0.1vw;
     padding-right: 5vw;
 }
+
+
 
 @media (min-width: 768px) {
     .round-button {
@@ -119,6 +135,19 @@
         border: 0.2vw solid #000;
         background: #EBE5DC;
     }
+        .green-button {
+        font-family: 'Anonymous Pro', monospace;
+            font-weight: 700;
+            font-size: 1.5vw;
+            width: 4vw;
+            height: 4.5vw;
+            flex-shrink: 0;
+            border-radius: 1vw;
+            border: 0.2vw solid #000;
+            color: #EBE5DC;
+            background-color: #868365;
+    
+        }
 
 .square-image {
     height: 100%;
