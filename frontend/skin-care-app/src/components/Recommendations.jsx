@@ -3,17 +3,14 @@ import "./componentStyles.css";
 import RecommendationCard from "../organisms/RecommendationCard";
 import { HeadingsCustom } from "../atoms/CustomTexts";
 
-const Recommendations = () => {
+const Recommendations = (props) => {
   return (
     <div className="recommendations-container">
-      <div className="recommendation-header">
-        <HeadingsCustom
-          headingTexts="RECOMMENDATIONS"
-          headingTextStyles={{ fontSize: "9vw" }}
-        />
-      </div>
       <div className="recommendation-cards">
-        <RecommendationCard />
+        <RecommendationCard
+          cardHeadingTexts={props.cardHeadingTexts}
+          cardBodyTexts={props.cardBodyTexts}
+        />
       </div>
     </div>
   );

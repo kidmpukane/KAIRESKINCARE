@@ -6,16 +6,16 @@ import { HeadingsCustom } from "../atoms/CustomTexts";
 // import MolecularProgressBar from "../molecules/MolecularProgressBar";
 import productImage from "../assets/Rectangle 112.png";
 
-function RecommendationCard() {
+function RecommendationCard(props) {
   return (
     <div className="recommendations-card-container">
       <div className="left-div">
-        <CustomImages src={productImage} alt="Nothing To Display" />
+        <CustomImages src={props.src} alt="Nothing To Display" />
       </div>
       <div className="right-div">
         <CardHeaderAndBody
-          cardHeadingTexts="RECOMMENDED PRODUCTS"
-          cardBodyTexts="This is the product that we have recommended for you, depending on the information that we received."
+          cardHeadingTexts={props.cardHeadingTexts}
+          cardBodyTexts={props.cardBodyTexts}
         />
         {/* <HeadingsCustom
           className={"mobile-text"}
