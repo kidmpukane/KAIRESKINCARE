@@ -45,8 +45,8 @@ def predict_skin_type(quiz_answers):
     predicted_skin_type_index = np.argmax(predicted_skin_type)
 
     # Map indices to skin type names
-    skin_type_names = ['Normal Skin', 'Oily Skin',
-                       'Dry Skin', 'Combination Skin', 'Sensitive Skin']
+    skin_type_names = ['Normal-Skin', 'Oily-Skin',
+                       'Dry-Skin', 'Combination-Skin', 'Sensitive-Skin']
 
     # Return the predicted skin type name
     return skin_type_names[predicted_skin_type_index]
