@@ -1,3 +1,4 @@
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -41,8 +42,27 @@ class predict_skin(APIView):
         serializer = PredictRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         quiz_answers = serializer.validated_data['quiz_answers']
+
+        # Predict skin type
         predicted_skin_type = predict_skin_type(quiz_answers)
-        return Response({'predicted_skin_type': predicted_skin_type})
+
+        # Filter products based on the predicted_skin_type
+        products = Products.objects.filter(
+            skin_types__icontains=predicted_skin_type)
+
+        # Check if any products were found
+        if not products.exists():
+            return Response({'error': 'No products found for this skin type.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Serialize the filtered products
+        serializer = ProductSerializer(products, many=True)
+
+        # Return the predicted skin type and filtered products
+        return Response({
+            'predicted_skin_type': predicted_skin_type,
+            'filtered_products': serializer.data
+        })
+
 
 # class PredictSkin(APIView):
 #   def post(self, request):

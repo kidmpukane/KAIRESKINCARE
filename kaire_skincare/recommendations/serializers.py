@@ -5,7 +5,7 @@ import numpy as np
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Products
+        model = Products
         fields = '__all__'
 
 
