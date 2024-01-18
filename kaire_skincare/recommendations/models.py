@@ -5,6 +5,7 @@ from django_random_id_model import RandomIDModel
 class Products(RandomIDModel):
     product_title = models.CharField(max_length=500)
     sub_title = models.CharField(max_length=500)
+    product_type = models.CharField(max_length=500, default="None Specified")
     ingredients = models.CharField(max_length=500)
     skin_types = models.CharField(max_length=500, default="None Specified")
     price = models.PositiveIntegerField(default=0)
